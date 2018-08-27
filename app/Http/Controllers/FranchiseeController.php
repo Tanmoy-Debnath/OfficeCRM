@@ -63,8 +63,7 @@ public function franchiseeloginInfoadd(Request $request){
     $franchisee->save();
 
 
-    $franchiseeId = $franchisee->id;
-    Session::put('franchiseeId',$franchiseeId);
+
 
 
 
@@ -86,12 +85,16 @@ public function franchiseeloginInfoadd(Request $request){
 
 
 
+
         if (password_verify($request->password,$franchisee->password)) {
+            Session::put('franchiseeId',$franchisee->id);
             Session::put('franchiseeName',$franchisee->user_name);
+
+
 
             return redirect('franchisee/info');
         } else {
-            echo 'Invalid password.';
+            return redirect('/')->with('message','Password Not Matched');
         }
 
 
@@ -100,6 +103,45 @@ public function franchiseeloginInfoadd(Request $request){
     public function FranchiseeOwnLoginInfo(){
         return view('admin.franchiseeInfo.franchisee-info');
     }
+
+    public function franchiseeLogout() {
+
+        Session::forget('franchiseeId');
+        Session::forget('password');
+
+
+             return redirect('/');
+    }
+
+
+
+
+
+    public function FranchiseeUserDetailInfo(){
+        return view('admin.franchiseeInfo.franchisee-profile');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

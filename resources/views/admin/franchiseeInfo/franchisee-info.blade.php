@@ -43,17 +43,31 @@
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
 
-       <li><p style="color: white;">{{ Session::get('franchiseeName') }}</p></li>
+
 
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i>{{ Session::get('franchiseeName') }}</i>
                 <i class="fas fa-user-circle fa-fw"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">User Profile</a>
 
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">Logout</a>
+
+                @if(Session::get('franchiseeName'))
+                    <a href="#" class="dropdown-item" onclick="document.getElementById('franchisee-logout').submit();">Logout</a>
+
+
+                    {{ Form::open(['id' => 'franchisee-logout', 'route' => 'fra-logout' ,'method' => 'POST' ]) }}
+
+
+                    {{ Form::close() }}
+                @else
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Login</button>
+                @endif
+
+
             </div>
         </li>
     </ul>
@@ -77,7 +91,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <h6 class="dropdown-header"></h6>
-                <a class="dropdown-item" href="login.html">Profile</a>
+                <a class="dropdown-item" href="{{ route('user-profile') }}">Profile</a>
                 <a class="dropdown-item" href="register.html">Work</a>
 
             </div>
@@ -155,14 +169,7 @@
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
 
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
+
 
 
 

@@ -153,6 +153,19 @@ Route::get('franchisee/info',[
     'as'  => 'franchisee-ownloginInfo'
 ]);
 
+
+Route::get('franchisee/user-profile',[
+    'uses' => 'FranchiseeController@FranchiseeUserDetailInfo',
+    'as'  => 'user-profile'
+]);
+
+Route::post('franchisee/franchisee-Logout',[
+    'uses' => 'FranchiseeController@franchiseeLogout',
+    'as'  => 'fra-logout'
+]);
+
+
+
                                                        //Guest Area
 
 

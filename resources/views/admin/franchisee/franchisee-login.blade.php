@@ -1,4 +1,9 @@
 @extends('admin.master')
+@section('titleName')
+
+
+
+    @endsection
 @section('content')
 
     <div class="single-wl3">
