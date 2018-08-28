@@ -72,6 +72,56 @@ public function franchiseeloginInfoadd(Request $request){
 
     return redirect('stuff/franchisee-loginInfo')->with('message','Login info save Successfully');
 }
+
+
+    public function FranchiseeLoginManage() {
+        $franchisees = FranchiseeLogin::all();
+        return view ('admin.franchiseeInfo.franchisee-infoManage',[
+            'franchisees' => $franchisees
+        ]);
+    }
+
+
+
+    public function FranchiseeLoginEdit($id) {
+        $franchisee = FranchiseeLogin::find($id);
+        return view ('admin.franchiseeInfo.franchisee-infoEdit',[
+            'franchisee' => $franchisee
+        ]);
+    }
+
+
+    public function updateFranchiseeLogininfo(Request $request){
+        $franchisee = FranchiseeLogin::find($request->franchisee_id);
+
+        $franchisee->user_name = $request->user_name;
+        $franchisee->password = bcrypt($request->password);
+        $franchisee->save();
+
+
+        return redirect('franchisee/LoginManage')->with('message','Franchisee Login info Updated Succesfully');
+
+    }
+
+    public function FranchiseeLoginDelete($id) {
+        $franchisee = FranchiseeLogin::find($id);
+        $franchisee->delete();
+
+
+        return redirect('franchisee/LoginManage')->with('message','Franchisee Login info Deleted Succesfully');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 /*
     public function FranchiseeLoginform(){
         return view('admin.franchisee.franchiseeOwn-login');
@@ -121,21 +171,7 @@ public function franchiseeloginInfoadd(Request $request){
         return view('admin.franchiseeInfo.franchisee-profile');
     }
 
-    public function FranchiseeLoginManage() {
-        $franchaisees = FranchiseeLogin::all();
-        return view ('admin.franchiseeInfo.franchisee-infoManage',[
-            'franchaisees' => $franchaisees
-        ]);
-    }
 
-
-
-    public function FranchiseeLoginEdit($id) {
-       $frnachiseelogin = FranchiseeLogin::find($id);
-        return view ('admin.franchiseeInfo.franchisee-infoEdit',[
-            'frnachiseelogin' => $frnachiseelogin
-        ]);
-    }
 
 
 

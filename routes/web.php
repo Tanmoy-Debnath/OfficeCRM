@@ -178,6 +178,16 @@ Route::get('franchisee/LoginEdit/{id}',[
     'as'  => 'edit-franchiseeLoginInfo'
 ]);
 
+Route::post('/franchisee-logIn/update', [
+    'uses'  =>  'FranchiseeController@updateFranchiseeLogininfo',
+    'as'    =>  'update-franchiseeLoginInfo'
+]);
+
+
+Route::get('franchisee/LoginDelete/{id}',[
+    'uses' => 'FranchiseeController@FranchiseeLoginDelete',
+    'as'  => 'delete-franchiseeLoginInfo'
+]);
 
 
 

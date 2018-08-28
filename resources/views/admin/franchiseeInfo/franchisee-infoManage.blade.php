@@ -21,25 +21,25 @@
                             </thead>
                             <tbody>
                                 @php($i=1)
-                                @foreach( $franchaisees as $franchaisee)
+                                @foreach( $franchisees as $franchisee)
 
                                 <tr>
 
                                     <th>{{ $i++ }}</th>
-                                    <th>{{ $franchaisee->user_name }}</th>
-                                    <th>{{ $franchaisee->password }}</th>
+                                    <th>{{ $franchisee->user_name }}</th>
+                                    <th>{{ $franchisee->password }}</th>
                                     <th></th>
 
 
                                     <td>
-                                        <a href="{{ route('edit-franchiseeLoginInfo') }}">
+                                        <a href="{{ route('edit-franchiseeLoginInfo',['id'=>$franchisee->id]) }}">
                                             <button  class="btn btn-outline-primary">Edit</button>
 
                                         </a>
 
                                     </td>
                                     <td>
-                                        <a href="">
+                                        <a href="{{ route('delete-franchiseeLoginInfo', ['id'=>$franchisee->id]) }}">
                                             <button  class="btn btn-outline-danger">Delete</button>
 
                                         </a>
