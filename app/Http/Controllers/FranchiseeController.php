@@ -121,6 +121,21 @@ public function franchiseeloginInfoadd(Request $request){
         return view('admin.franchiseeInfo.franchisee-profile');
     }
 
+    public function FranchiseeLoginManage() {
+        $franchaisees = FranchiseeLogin::all();
+        return view ('admin.franchiseeInfo.franchisee-infoManage',[
+            'franchaisees' => $franchaisees
+        ]);
+    }
+
+
+
+    public function FranchiseeLoginEdit($id) {
+       $frnachiseelogin = FranchiseeLogin::find($id);
+        return view ('admin.franchiseeInfo.franchisee-infoEdit',[
+            'frnachiseelogin' => $frnachiseelogin
+        ]);
+    }
 
 
 

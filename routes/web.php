@@ -154,6 +154,8 @@ Route::get('franchisee/info',[
 ]);
 
 
+
+
 Route::get('franchisee/user-profile',[
     'uses' => 'FranchiseeController@FranchiseeUserDetailInfo',
     'as'  => 'user-profile'
@@ -163,6 +165,19 @@ Route::post('franchisee/franchisee-Logout',[
     'uses' => 'FranchiseeController@franchiseeLogout',
     'as'  => 'fra-logout'
 ]);
+
+
+
+Route::get('franchisee/LoginManage',[
+    'uses' => 'FranchiseeController@FranchiseeLoginManage',
+    'as'  => 'manage-franchiseeLogin'
+]);
+
+Route::get('franchisee/LoginEdit/{id}',[
+    'uses' => 'FranchiseeController@FranchiseeLoginEdit',
+    'as'  => 'edit-franchiseeLoginInfo'
+]);
+
 
 
 

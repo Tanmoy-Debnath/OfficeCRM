@@ -68,6 +68,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('manage-franchisee') }}">Manage Franchisee</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('manage-franchiseeLogin') }}">Manage Franchisee Login</a>
+                    </li>
+
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('slot-view') }}">Slot</a>
                     </li>
