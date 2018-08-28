@@ -92,7 +92,7 @@
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <h6 class="dropdown-header"></h6>
                 <a class="dropdown-item" href="{{ route('user-profile') }}">Profile</a>
-                <a class="dropdown-item" href="register.html">Work</a>
+                <a class="dropdown-item" href="{{ route('franchisee-work') }}">Work</a>
 
             </div>
         </li>

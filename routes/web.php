@@ -189,6 +189,13 @@ Route::get('franchisee/LoginDelete/{id}',[
     'as'  => 'delete-franchiseeLoginInfo'
 ]);
 
+                                                      //Franchisee Work Area
+
+Route::get('franchisee/Work',[
+    'uses' => 'FranchiseeController@FranchiseeWork',
+    'as'  => 'franchisee-work'
+]);
+
 
 
                                                        //Guest Area

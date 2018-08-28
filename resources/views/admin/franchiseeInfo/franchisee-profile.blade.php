@@ -1,8 +1,8 @@
 @extends('admin.franchiseeInfo.franchisee-info')
 @section('title')
     User Information
-    @endsection
+@endsection
 
 @section('content')
     <p>User Name : {{ Session::get('franchiseeName') }}</p>
-    @endsection
+@endsection

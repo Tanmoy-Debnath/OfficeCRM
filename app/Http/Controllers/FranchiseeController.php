@@ -112,7 +112,9 @@ public function franchiseeloginInfoadd(Request $request){
     }
 
 
-
+public function FranchiseeWork() {
+        return view('admin.franchiseeInfo.franchisee-work');
+}
 
 
 
