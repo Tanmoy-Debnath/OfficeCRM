@@ -75,6 +75,10 @@
 -->
 
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('show-franchiseeWork') }}">Manage Franchisee Work</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('slot-view') }}">Slot</a>
                     </li>
                     <li class="nav-item">

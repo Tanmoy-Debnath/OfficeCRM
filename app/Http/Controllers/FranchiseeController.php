@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 
+use App\Work;
 use Illuminate\Http\Request;
 use App\Franchisee;
 use App\FranchiseeLogin;
@@ -119,7 +120,7 @@ public function franchiseeloginInfoadd(Request $request){
     return redirect('stuff/franchisee-loginInfo')->with('message','Login info save Successfully');
 }
 
-
+/*
     public function FranchiseeLoginManage() {
         $franchisees = FranchiseeLogin::all();
         return view ('admin.franchiseeInfo.franchisee-infoManage',[
@@ -157,7 +158,7 @@ public function franchiseeloginInfoadd(Request $request){
         return redirect('franchisee/LoginManage')->with('message','Franchisee Login info Deleted Succesfully');
     }
 
-
+*/
 public function FranchiseeWork() {
         return view('admin.franchiseeInfo.franchisee-work');
 }
@@ -199,10 +200,38 @@ public function FranchiseeWork() {
         return view('admin.franchiseeInfo.franchisee-profile');
     }
 
+    public function FranchiseeWorkSave(Request $request) {
+        $work = new Work();
+        $work->record = $request->record;
+        $work->user_name = $request->user_name;
+        $work->policy = $request->policy;
+        $work->f_name = $request->f_name;
+        $work->city = $request->city;
+        $work->phone = $request->phone;
+        $work->gp = $request->gp;
+        $work->paid_amount = $request->paid_amount;
+        $work->date = $request->date;
+        $work->month = $request->month;
+        $work->year = $request->year;
+        $work->medical = $request->medical;
+        $work->l_name = $request->l_name;
+        $work->state = $request->state;
+        $work->marit = $request->marit;
+        $work->claims = $request->claims;
+        $work->n_amount = $request->n_amount;
+        $work->save();
+
+        return redirect('franchisee/Work')->with('message','Work Info Add Sussesfully');
+
+    }
 
 
-
-
+public function FranchiseeWorkShow() {
+        $works = Work::all();
+     return view('admin.franchiseeInfo.show-franchiseeWork',[
+         'works' => $works
+     ]);
+}
 
 
 

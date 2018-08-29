@@ -196,6 +196,16 @@ Route::get('franchisee/Work',[
     'as'  => 'franchisee-work'
 ]);
 
+Route::post('franchisee/Work-save',[
+    'uses' => 'FranchiseeController@FranchiseeWorkSave',
+    'as'  => 'franchisee-workSave'
+]);
+
+Route::get('franchisee/Work-manage',[
+    'uses' => 'FranchiseeController@FranchiseeWorkShow',
+    'as'  => 'show-franchiseeWork'
+]);
+
 
 
                                                        //Guest Area

@@ -12,41 +12,45 @@
 
     </style>
     <h2 style="text-align: center">Fill the Form and Submit</h2>
-    <br> <br>
+    <br>
+    <h3 class="text-center text-success">{{ Session::get('message')  }}</h3>
+    <br>
     <div class="container" style="margin-left: 15%;">
 
         <div class="row">
 
             <div class="col-md-4 col-md-offset-1">
-
+             {{ Form::open([ 'method' => 'POST', 'route' => 'franchisee-workSave' ]) }}
 
             <div class="form-group">
-                <label for="email" class="l1">Record No.</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter Record no." name="email">
+                <label  class="l1">Record No.</label>
+                <input type="text" name="record" class="form-control"  placeholder="Enter Record no." >
+                <input type="hidden" value="{{ Session::get('franchiseeName') }}" name="user_name" class="form-control">
+
             </div>
             <div class="form-group">
-                <label for="pwd" class="l1">Policy No.</label>
-                <input type="password" class="form-control" id="pwd" placeholder="Enter Policy no." name="pwd">
+                <label  class="l1">Policy No.</label>
+                <input type="text" name="policy" class="form-control"  placeholder="Enter Policy no." >
             </div>
                 <div class="form-group">
                     <label for="email" class="l1">First Name:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter First Name" name="email">
+                    <input type="text" name="f_name" class="form-control"  placeholder="Enter First Name" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">City:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter City" name="email">
+                    <input type="text" name="city" class="form-control"  placeholder="Enter City" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Phone:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter Phone no." name="email">
+                    <input type="text" name="phone" class="form-control"  placeholder="Enter Phone no." >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Generel Practitioner(gp) Code:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter Generel Practitioner(gp) Code" name="email">
+                    <input type="text" name="gp" class="form-control"  placeholder="Enter Generel Practitioner(gp) Code" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Paid Amount:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter paid amount" name="email">
+                    <input type="text" name="paid_amount" class="form-control"  placeholder="Enter paid amount" >
                 </div>
 
 
@@ -63,7 +67,7 @@
                     <div class="form-control">
                         Day :
 
-                        <select class="control-group" name='date' id='dayddl'>
+                        <select class="control-group" name='date' id='date'>
                             <option value='1'>1</option>
                             <option value='2'>2</option>
                             <option value='3'>3</option>
@@ -99,7 +103,7 @@
 
 
                         Month :
-                        <select name='month' id='monthddl'>
+                        <select name='month' id='month'>
                             <option value='1'>1</option>
                             <option value='2'>2</option>
                             <option value='3'>3</option>
@@ -117,7 +121,8 @@
 
                         Year :
 
-                        <select name='year' id='blah'>
+
+                        <select name='year' id='year'>
 
                             <option value='1980'>1980</option>
                             <option value='1981'>1981</option>
@@ -171,34 +176,34 @@
                 </div>
                 <div class="form-group">
                     <label for="pwd" class="l1">Medical Card No:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter Medical Card No" name="pwd">
+                    <input type="text" name="medical" class="form-control"  placeholder="Enter Medical Card No" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Last Name:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter Last Name" name="email">
+                    <input type="text" name="l_name" class="form-control"  placeholder="Enter Last Name" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">State:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter State" name="email">
+                    <input type="text" name="state" class="form-control"  placeholder="Enter State" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Martial Status:</label>
                     <div>
-                        <select class="form-control">
+                        <select class="form-control" name="marit">
 
-                        <option value='1969'>Married</option>
-                        <option value='1970'>Unmarried</option>
+                        <option value='Married'>Married</option>
+                        <option value='Unmarried'>Unmarried</option>
 
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Hospital/Claim Days:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter Hospital/Claim Days" name="email">
+                    <input type="text" name="claims" class="form-control"  placeholder="Enter Hospital/Claim Days" >
                 </div>
                 <div class="form-group">
                     <label class="l1" for="email">Net Amount:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter Net Amount" name="email">
+                    <input type="text" name="n_amount" class="form-control"  placeholder="Enter Net Amount" >
                 </div>
 
 
@@ -208,7 +213,13 @@
     </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="submit" class="btn btn-secondary">Clear</button>
+
+        {{ Form::close() }}
+
+        <a href="{{ route('franchisee-work') }}">
+            <button class="btn btn-secondary">Clear</button>
+        </a>
+
 
 
 
