@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-3">First Name:</label>
                         <div class="col-md-9">
-                            <input type="text" name="f_name" class="form-control"/>
+                            <input type="text" name="f_name" id="f_name" onkeyup="keyUp()" class="form-control"/>
                             <span class="text-danger">{{ $errors->has('brand_name') ? $errors->first('brand_name') : ' ' }}</span>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-3">Father/Guardian Name:</label>
                         <div class="col-md-9">
-                            <input type="text" name="father_name" class="form-control"/>
+                            <input type="text" name="father_name" id="father_name" class="form-control"/>
                             <span class="text-danger">{{ $errors->has('brand_name') ? $errors->first('brand_name') : ' ' }}</span>
                         </div>
                     </div>
@@ -79,9 +79,12 @@
                       <div class="form-group">
                           <label class="control-label col-md-3">DOB:</label>
                           <div class="col-md-9">
-                              Day :
+                            Day :
 
-                              <select class="control-group" name='date' id='dayddl'>
+
+
+                             <label class="control-label">
+                                 <select class="control-group" name='date' id='date' onchange="keyUp()">
                                   <option value='1'>1</option>
                                   <option value='2'>2</option>
                                   <option value='3'>3</option>
@@ -115,9 +118,10 @@
                                   <option value='31'>31</option>
                               </select>
 
-
-                              Month :
-                              <select name='month' id='monthddl'>
+                             </label>
+                                Month :
+                              <label class="control-label">
+                              <select name='month' id='month' onchange="keyUp()">
                                   <option value='1'>1</option>
                                   <option value='2'>2</option>
                                   <option value='3'>3</option>
@@ -131,11 +135,12 @@
                                   <option value='11'>11</option>
                                   <option value='12'>12</option>
                               </select>
+                              </label>
 
 
-                              Year :
-
-                              <select name='year' id='blah'>
+                               Year :
+<label class="control-label">
+                              <select name='year' id='year' onchange="keyUp()">
 
                                   <option value='1980'>1980</option>
                                   <option value='1981'>1981</option>
@@ -177,6 +182,7 @@
                                   <option value='1970'>2017</option>
                                   <option value='1971'>2018</option>
                               </select>
+</label>
 
                           </div>
 
@@ -262,6 +268,23 @@
                             <span class="text-danger">{{ $errors->has('brand_name') ? $errors->first('brand_name') : ' ' }}</span>
                         </div>
                     </div>
+                      <br><br>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">User Name:</label>
+                        <div class="col-md-9">
+                            <input type="text" name="user_name" id="user_name" class="form-control"/>
+                            <span class="text-danger">{{ $errors->has('brand_name') ? $errors->first('brand_name') : ' ' }}</span>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Password :</label>
+                        <div class="col-md-9">
+                            <input type="text" name="password" id="password" class="form-control"/>
+                            <span class="text-danger">{{ $errors->has('brand_name') ? $errors->first('brand_name') : ' ' }}</span>
+                        </div>
+                    </div>
 
                     <br>
 
@@ -275,6 +298,7 @@
                     <div class="form-group">
                         <input type="submit" value="Add" name="btn" class="form-control btn btn-success">
                     </div>
+
 
 
                     {{ Form::close() }}
@@ -304,3 +328,34 @@
 
 
 @endsection
+
+<script type="text/javascript">
+
+  /*  $( "#f_name" ).keyup(function() {
+        alert("I am an alert box!");
+        //createUserName();
+    });*/
+
+function keyUp(){
+      var myName=$("#f_name").val();
+      var birthDate=$("#date").val();
+    var birthMonth=$("#month").val();
+    var birthyear=$("#year").val();
+
+      if (myName==''){
+          $("#user_name").val("");
+      }
+      else{
+          $("#user_name").val(myName+birthDate);
+          $("#password").val(myName+birthMonth+birthyear);
+
+
+      }
+
+  }
+
+
+
+
+
+</script>

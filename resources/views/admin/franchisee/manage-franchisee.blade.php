@@ -26,6 +26,8 @@
                                 <th>No. of Slot</th>
                                 <th>No. of Payment</th>
                                 <th>No. of Renew</th>
+                                <th>User Name</th>
+                                <th>Password</th>
 
 
 
@@ -52,6 +54,8 @@
                                     <th>{{ $franchisee->no_slot }}</th>
                                     <th>{{ $franchisee->no_payment }}</th>
                                     <th>{{ $franchisee->no_renew }}</th>
+                                    <th>{{ $franchisee->user_name }}</th>
+                                    <th>{{ $franchisee->password }}</th>
 
                                     <th>{{ $franchisee->created_at }}</th>
 

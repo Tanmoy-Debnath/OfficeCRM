@@ -268,6 +268,21 @@
                     </div>
 
                     <br>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">User Name:</label>
+                        <div class="col-md-9">
+                            <input type="text" value="{{  $franchisee->user_name }}" name="user_name" id="user_name" class="form-control"/>
+                            <span class="text-danger">{{ $errors->has('brand_name') ? $errors->first('brand_name') : ' ' }}</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Password :</label>
+                        <div class="col-md-9">
+                            <input type="text" value="{{  $franchisee->password }}" name="password" id="password" class="form-control"/>
+                            <span class="text-danger">{{ $errors->has('brand_name') ? $errors->first('brand_name') : ' ' }}</span>
+                        </div>
+                    </div>
 
 
 

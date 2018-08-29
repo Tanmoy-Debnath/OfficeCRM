@@ -37,6 +37,8 @@ public function franchiseeAdd(Request $request) {
     $franchisee->no_slot = $request->no_slot;
     $franchisee->no_payment = $request->no_payment;
     $franchisee->no_renew = $request->no_renew;
+    $franchisee->user_name = $request->user_name;
+    $franchisee->password = bcrypt($request->password);
     $franchisee->save();
 
     $franchiseeId = $franchisee->id;
@@ -45,9 +47,53 @@ public function franchiseeAdd(Request $request) {
 
 
 
-    return redirect('stuff/franchisee-loginInfo');
+    return redirect('franchisee/franchisee-form')->with('message','Franchisee Info Add Succesfully');
 
 }
+
+    public function franchiseeLogInAdd(Request $request){
+
+        $franchisee = Franchisee::where('user_name', $request->user_name)->first();
+
+
+
+
+
+
+        if (password_verify($request->password,$franchisee->password)) {
+            Session::put('franchiseeId',$franchisee->id);
+            Session::put('franchiseeName',$franchisee->user_name);
+            Session::put('franchiseefirstName',$franchisee->f_name);
+            Session::put('franchiseeLastName',$franchisee->l_name);
+            Session::put('franchiseeFatherName',$franchisee->father_name);
+            Session::put('franchiseesex',$franchisee->sex);
+            Session::put('franchiseeBdate',$franchisee->date);
+            Session::put('franchiseeBmonth',$franchisee->month);
+            Session::put('franchiseeByear',$franchisee->year);
+            Session::put('franchiseeAddress',$franchisee->address);
+            Session::put('franchiseePhone',$franchisee->phone_number);
+            Session::put('franchiseebkash',$franchisee->bkash);
+            Session::put('franchiseedbbl',$franchisee->dbbl);
+            Session::put('franchiseeNid',$franchisee->nid);
+            Session::put('franchiseesisid',$franchisee->sis_id);
+            Session::put('franchiseeslot',$franchisee->no_slot);
+            Session::put('franchiseepayment',$franchisee->no_payment);
+            Session::put('franchiseerenew',$franchisee->no_renew);
+
+
+
+
+
+            return redirect('franchisee/info'
+
+            );
+        } else {
+            return redirect('/')->with('message','Password Not Matched');
+        }
+
+
+    }
+
 public function franchiseeAddLogininfo(){
     $franchiseeId = Franchisee::find(Session::get('franchiseeId'));
     return view('admin.franchisee.franchisee-login',[
@@ -130,27 +176,7 @@ public function FranchiseeWork() {
     }
 */
 
-    public function franchiseeLogInAdd(Request $request){
 
-        $franchisee = FranchiseeLogin::where('user_name', $request->user_name)->first();
-
-
-
-
-
-        if (password_verify($request->password,$franchisee->password)) {
-            Session::put('franchiseeId',$franchisee->id);
-            Session::put('franchiseeName',$franchisee->user_name);
-
-
-
-            return redirect('franchisee/info');
-        } else {
-            return redirect('/')->with('message','Password Not Matched');
-        }
-
-
-    }
 
     public function FranchiseeOwnLoginInfo(){
         return view('admin.franchiseeInfo.franchisee-info');
@@ -231,6 +257,8 @@ public function editFranchiseeinfo($id){
         $franchisee->no_slot = $request->no_slot;
         $franchisee->no_payment = $request->no_payment;
         $franchisee->no_renew = $request->no_renew;
+        $franchisee->user_name = $request->user_name;
+        $franchisee->password = bcrypt($request->password);
         $franchisee->save();
 
         return redirect('stuff/franchisee-manage')->with('message', 'Franchisee Info Updated Succesfully');

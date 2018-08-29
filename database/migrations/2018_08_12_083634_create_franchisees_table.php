@@ -32,6 +32,8 @@ class CreateFranchiseesTable extends Migration
             $table->string('no_slot');
             $table->string('no_payment');
             $table->string('no_renew');
+            $table->string('user_name');
+            $table->string('password');
 
             $table->timestamps();
         });
