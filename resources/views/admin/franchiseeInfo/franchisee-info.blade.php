@@ -29,7 +29,7 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">Southeast Integrated Solution Ltd</a>
+    <a class="navbar-brand mr-1" href="">Southeast Integrated Solution Ltd</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -93,6 +93,7 @@
                 <h6 class="dropdown-header"></h6>
                 <a class="dropdown-item" href="{{ route('user-profile') }}">Profile</a>
                 <a class="dropdown-item" href="{{ route('franchisee-work') }}">Work</a>
+                <a class="dropdown-item" href="{{ route('franchisee-workedDoneList') }}">Worked List</a>
 
             </div>
         </li>

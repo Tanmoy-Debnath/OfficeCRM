@@ -221,6 +221,9 @@ public function FranchiseeWork() {
         $work->n_amount = $request->n_amount;
         $work->save();
 
+
+        Session::put('workId',$work->user_name);
+
         return redirect('franchisee/Work')->with('message','Work Info Add Sussesfully');
 
     }
@@ -233,6 +236,12 @@ public function FranchiseeWorkShow() {
      ]);
 }
 
+public function FranchiseeWorkDoneList() {
+    $workId = Work::find(Session::get('workId'));
+        return view('admin.franchiseeInfo.franchiseeWork-doneList',[
+            'workId' => $workId
+        ]);
+}
 
 
 

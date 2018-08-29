@@ -206,6 +206,11 @@ Route::get('franchisee/Work-manage',[
     'as'  => 'show-franchiseeWork'
 ]);
 
+Route::get('franchisee/Work-Done',[
+    'uses' => 'FranchiseeController@FranchiseeWorkDoneList',
+    'as'  => 'franchisee-workedDoneList'
+]);
+
 
 
                                                        //Guest Area
