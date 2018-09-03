@@ -24,7 +24,7 @@
             <tr>
 
 
-                <td>f_name  : </td>
+                <td>f  : </td>
                 <td>{{ Session::get('franchiseeFatherName') }}</td>
             </tr>
 
