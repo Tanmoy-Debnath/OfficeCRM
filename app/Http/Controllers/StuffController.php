@@ -16,7 +16,7 @@ class StuffController extends Controller
         $stuff = new Stuff();
 
         $stuff->user_name = $request->user_name;
-        $stuff->password = $request->password;
+        $stuff->password = bcrypt($request->password);
         $stuff->email_address = $request->email_address;
         $stuff->phone_number = $request->phone_number;
         $stuff->type = $request->type;
