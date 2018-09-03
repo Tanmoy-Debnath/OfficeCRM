@@ -5,6 +5,7 @@
 
 @section('content')
 
+
 <div class="container col-md-12">
         <table class="table table-hover table-primary">
 
@@ -110,6 +111,12 @@
         </table>
 
     </div>
+
+
+
+
+
+
 
 
 

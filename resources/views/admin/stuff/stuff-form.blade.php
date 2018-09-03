@@ -38,7 +38,12 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="text" name="type" class="form-control" placeholder="Type" >
+                    <div class="col-md-9">
+
+                        <label><input type="radio" name="type" value="receptionist"/>Receptionist</label>
+                        <label><input type="radio" name="type" value="order"/>Order</label>
+                        <label><input type="radio" name="type" value="qc"/>QC</label>
+                    </div>
                     <span class="text-danger">{{ $errors->has('phone_number') ? $errors->first('phone_number') : ' ' }}</span>
                 </div>
 

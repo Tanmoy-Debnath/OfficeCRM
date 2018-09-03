@@ -9,12 +9,12 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+
 
 Route::get('/', function () {
     return view('admin.franchisee.franchiseeOwn-login');
 });
-
+*/
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -135,17 +135,18 @@ Route::get('/franchisee/delete/slot/{id}', [
 
                                                          //Franchisee Login Area
 
-/*
-Route::get('franchisee/',[
+
+Route::get('/',[
     'uses' => 'FranchiseeController@FranchiseeLoginform',
     'as'  => 'franchisee-loginform'
 ]);
-*/
+
 
 Route::post('franchisee/franchisee-LogIn',[
     'uses' => 'FranchiseeController@franchiseeLogInAdd',
     'as'  => 'franchisee-LogInOwn'
 ]);
+
 
 Route::get('franchisee/info',[
     'uses' => 'FranchiseeController@FranchiseeOwnLoginInfo',
@@ -298,6 +299,28 @@ Route::get('download/Order-Pdf',[
 ]);
 
 
+                                                   // Receptionist Area
+
+
+Route::get('receptionist/login-form',[
+    'uses' => 'ReceptionController@RecptionistLoginForm',
+    'as'  => 'receptionistLogin-form'
+]);
+
+Route::post('receptionist/receptionist-LogIn',[
+    'uses' => 'ReceptionController@receptionistLogInAdd',
+    'as'  => 'receptionist-logincheck'
+]);
+
+Route::get('receptionist/home',[
+    'uses' => 'ReceptionController@RecptionistHomePage',
+    'as'  => 'receptionistHome-page'
+]);
+
+Route::post('receptionist/receptionist-add',[
+    'uses' => 'ReceptionController@addguestReception',
+    'as'  => 'save-guestByReceptionist'
+]);
 
 
 
