@@ -14,28 +14,30 @@ class ReceptionController extends Controller
     }
 
     public function receptionistLogInAdd(Request $request) {
-        $staff = Stuff::where('user_name', $request->user_name)->first();
 
+        if( $staff = Stuff::where('user_name', $request->user_name)->first()){
 
+            //if (password_verify($request->password,$franchisee->password)) {
+            if( $staff = Stuff::where('password', $request->password)->first()){
+                Session::put('guestId',$staff->id);
+                Session::put('guestName',$staff->user_name);
+                Session::put('guestType',$staff->type);
 
+                return redirect('receptionist/home'
 
+                );
+            }
+            else{
+                return redirect('receptionist/login-form')->with('message','password is invalid');
+            }
 
-
-        if (password_verify($request->password,$staff->password)) {
-            Session::put('guestId',$staff->id);
-            Session::put('guestName',$staff->user_name);
-            Session::put('guestType',$staff->type);
-
-
-
-
-
-            return redirect('receptionist/home'
-
-            );
-        } else {
-            return "Invalid password";
         }
+
+        else {
+            return redirect('receptionist/login-form')->with('message','Username is invalid');
+
+        }
+
     }
 
     public function RecptionistHomePage() {
