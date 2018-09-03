@@ -20,9 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
-
-
+                                                      //admin profile
+Route::get('profile', 'HomeController@profile')->name('profile');
                                                       //Staff Area
 
 Route::get('stuff/Stuff-form',[
