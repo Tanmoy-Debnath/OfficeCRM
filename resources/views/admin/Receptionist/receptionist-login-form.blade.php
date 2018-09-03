@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>
-        Franchisee Login
+        @yield('titleName')
     </title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('/') }}admin/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
@@ -64,41 +64,41 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-                        {{ Form::open(['route' => 'franchisee-LogInOwn', 'method'=>'POST']) }}
-                            <div class="form-group">
-                                <label style="color: grey;" class="label">Username</label>
+                   {{ Form::open([ 'route' => 'receptionist-logincheck', 'method' => 'POST']) }}
+                        <div class="form-group">
+                            <label style="color: grey;" class="label">Username</label>
 
-                                    <input type="text" name="user_name" class="form-control" placeholder="Username">
-
-
-                                </div>
-
-                            <div class="form-group">
-                                <label class="label" style="color: grey;">Password</label>
-
-                                    <input type="password" name="password" class="form-control" placeholder="*********">
+                            <input type="text" name="user_name" class="form-control" placeholder="Username">
 
 
-                            </div>
-                            <div class="form-group">
+                        </div>
 
-                                <input type="submit" value="Login" name="btn" class="btn btn-primary submit-btn btn-block">
+                        <div class="form-group">
+                            <label class="label" style="color: grey;">Password</label>
+
+                            <input type="password" name="password" class="form-control" placeholder="*********">
+
+
+                        </div>
+                        <div class="form-group">
+
+                            <input type="submit" value="Login" name="btn" class="btn btn-primary submit-btn btn-block">
 
 
 
-                            </div>
-                            <div class="form-group d-flex justify-content-between">
-                                <div class="form-check form-check-flat mt-0">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" checked> Keep me signed in
-                                    </label>
-                                </div>
-
+                        </div>
+                        <div class="form-group d-flex justify-content-between">
+                            <div class="form-check form-check-flat mt-0">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" checked> Keep me signed in
+                                </label>
                             </div>
 
+                        </div>
+
+               {{ Form::close() }}
 
 
-                        {{ Form::close() }}
                     </div>
                     <ul class="auth-footer">
                         <li>
