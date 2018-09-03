@@ -20,9 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
-
-
+                                                      //admin profile
+Route::get('profile', 'HomeController@profile')->name('profile');
                                                       //Staff Area
 
 Route::get('stuff/Stuff-form',[
@@ -301,6 +300,30 @@ Route::get('download/Order-Pdf',[
 
 
                                                    // Receptionist Area
+<<<<<<< HEAD
+=======
+
+
+Route::get('receptionist/login-form',[
+    'uses' => 'ReceptionController@RecptionistLoginForm',
+    'as'  => 'receptionistLogin-form'
+]);
+
+Route::post('receptionist/receptionist-LogIn',[
+    'uses' => 'ReceptionController@receptionistLogInAdd',
+    'as'  => 'receptionist-logincheck'
+]);
+
+Route::get('receptionist/home',[
+    'uses' => 'ReceptionController@RecptionistHomePage',
+    'as'  => 'receptionistHome-page'
+]);
+
+Route::post('receptionist/receptionist-add',[
+    'uses' => 'ReceptionController@addguestReception',
+    'as'  => 'save-guestByReceptionist'
+]);
+>>>>>>> c63c7488eede8acf55d972ef3444c8067fbc15d1
 
 
 Route::get('receptionist/login-form',[

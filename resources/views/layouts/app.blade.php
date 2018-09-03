@@ -63,6 +63,8 @@
                             <li class="nav-item nav-link">
                                 <a class="nav-link btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
+
+
                             <br>
                             <li class="nav-item nav-link">
                                 <a class="nav-link btn btn-secondary" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -102,6 +104,45 @@
                                     </a>
                                 </div>
                             </li>
+
+
+                          
+
+
+
+
+
+
+                            <li class="nav-item dropdown d-none d-xl-inline-block">
+                                <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-success">Swtich Login !</button>
+
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                                    <a class="dropdown-item p-0">
+                                        <div class="d-flex border-bottom">
+                                            <div class="py-3 px-4 d-flex align-items-center justify-content-center">
+                                                <i class="mdi mdi-bookmark-plus-outline mr-0 text-gray">Login as -></i>
+                                            </div>
+
+
+                                        </div>
+                                    </a>
+                                    <a href="{{ route('receptionistLogin-form') }}" class="dropdown-item mt-2">
+                                        Receptionist
+                                    </a>
+                                    <a class="dropdown-item">
+                                        Change Password
+                                    </a>
+                                    <a class="dropdown-item">
+                                        Check Inbox
+                                    </a>
+                                    <a class="dropdown-item">
+                                        Sign Out
+                                    </a>
+                                </div>
+                            </li>
+
 
 
                           

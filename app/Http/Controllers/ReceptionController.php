@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Guest;
+=======
+>>>>>>> c63c7488eede8acf55d972ef3444c8067fbc15d1
 use Illuminate\Http\Request;
 use App\Stuff;
 use Session;
@@ -15,6 +18,7 @@ class ReceptionController extends Controller
     }
 
     public function receptionistLogInAdd(Request $request) {
+<<<<<<< HEAD
         $staff = Stuff::where('user_name', $request->user_name)->first();
 
 
@@ -37,6 +41,32 @@ class ReceptionController extends Controller
         } else {
             return "Invalid password";
         }
+=======
+
+        if( $staff = Stuff::where('user_name', $request->user_name)->first()){
+
+            //if (password_verify($request->password,$franchisee->password)) {
+            if( $staff = Stuff::where('password', $request->password)->first()){
+                Session::put('guestId',$staff->id);
+                Session::put('guestName',$staff->user_name);
+                Session::put('guestType',$staff->type);
+
+                return redirect('receptionist/home'
+
+                );
+            }
+            else{
+                return redirect('receptionist/login-form')->with('message','password is invalid');
+            }
+
+        }
+
+        else {
+            return redirect('receptionist/login-form')->with('message','Username is invalid');
+
+        }
+
+>>>>>>> c63c7488eede8acf55d972ef3444c8067fbc15d1
     }
 
     public function RecptionistHomePage() {
@@ -52,6 +82,7 @@ class ReceptionController extends Controller
 
         return redirect('receptionist/home')->with('message','Guest Info add Successfully');
 }
+<<<<<<< HEAD
 
 public function RecptionistVisitorList() {
         $guests = Gueest::all();
@@ -59,4 +90,6 @@ public function RecptionistVisitorList() {
             'guests' => $guests
         ]);
 }
+=======
+>>>>>>> c63c7488eede8acf55d972ef3444c8067fbc15d1
 }

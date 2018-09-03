@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Stuff;
 use Illuminate\Http\Request;
 
+
 class HomeController extends Controller
 {
     /**
@@ -29,4 +30,15 @@ class HomeController extends Controller
 
         ]);
     }
+    /*
+    public function profile()
+    {
+        $admininfo =DB::table('users')
+                    ->get();
+        $manage_users =view('admin.profile')
+                    ->with('admin_info', $admininfo);
+        return view('layout')
+                    ->with('admin.profile', $manage_users);
+    }
+    */
 }
