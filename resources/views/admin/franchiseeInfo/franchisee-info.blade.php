@@ -64,7 +64,10 @@
 
                     {{ Form::close() }}
                 @else
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Login</button>
+                    <a href="{{ route('franchisee-loginform') }}">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Login</button>
+                    </a>
+
                 @endif
 
 

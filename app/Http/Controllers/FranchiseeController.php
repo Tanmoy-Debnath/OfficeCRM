@@ -55,6 +55,7 @@ public function franchiseeAdd(Request $request) {
 
     public function franchiseeLogInAdd(Request $request){
 
+
      if( $franchisee = Franchisee::where('user_name', $request->user_name)->first()){
 
         //if (password_verify($request->password,$franchisee->password)) {
@@ -90,74 +91,83 @@ public function franchiseeAdd(Request $request) {
 
         else {
             return redirect('/')->with('message','Username is invalid');
+
+       
+
+
+
+
+
+       
+
         }
 
     }
-
-public function franchiseeAddLogininfo(){
-    $franchiseeId = Franchisee::find(Session::get('franchiseeId'));
-    return view('admin.franchisee.franchisee-login',[
-        'franchiseeId' => $franchiseeId
-    ]);
-}
-
-public function franchiseeloginInfoadd(Request $request){
-
-        $franchisee = new FranchiseeLogin();
-    $franchisee->user_name = $request->user_name;
-    $franchisee->password = bcrypt($request->password);
-    $franchisee->save();
-
-
-
-
-
-
-
-
-
-    return redirect('stuff/franchisee-loginInfo')->with('message','Login info save Successfully');
-}
-
-/*
-    public function FranchiseeLoginManage() {
-        $franchisees = FranchiseeLogin::all();
-        return view ('admin.franchiseeInfo.franchisee-infoManage',[
-            'franchisees' => $franchisees
+    /*
+    public function franchiseeAddLogininfo(){
+        $franchiseeId = Franchisee::find(Session::get('franchiseeId'));
+        return view('admin.franchisee.franchisee-login',[
+            'franchiseeId' => $franchiseeId
         ]);
     }
 
+    public function franchiseeloginInfoadd(Request $request){
 
-
-    public function FranchiseeLoginEdit($id) {
-        $franchisee = FranchiseeLogin::find($id);
-        return view ('admin.franchiseeInfo.franchisee-infoEdit',[
-            'franchisee' => $franchisee
-        ]);
-    }
-
-
-    public function updateFranchiseeLogininfo(Request $request){
-        $franchisee = FranchiseeLogin::find($request->franchisee_id);
-
+            $franchisee = new FranchiseeLogin();
         $franchisee->user_name = $request->user_name;
         $franchisee->password = bcrypt($request->password);
         $franchisee->save();
 
 
-        return redirect('franchisee/LoginManage')->with('message','Franchisee Login info Updated Succesfully');
 
+
+
+
+
+
+
+        return redirect('stuff/franchisee-loginInfo')->with('message','Login info save Successfully');
     }
 
-    public function FranchiseeLoginDelete($id) {
-        $franchisee = FranchiseeLogin::find($id);
-        $franchisee->delete();
+
+        public function FranchiseeLoginManage() {
+            $franchisees = FranchiseeLogin::all();
+            return view ('admin.franchiseeInfo.franchisee-infoManage',[
+                'franchisees' => $franchisees
+            ]);
+        }
 
 
-        return redirect('franchisee/LoginManage')->with('message','Franchisee Login info Deleted Succesfully');
-    }
 
-*/
+        public function FranchiseeLoginEdit($id) {
+            $franchisee = FranchiseeLogin::find($id);
+            return view ('admin.franchiseeInfo.franchisee-infoEdit',[
+                'franchisee' => $franchisee
+            ]);
+        }
+
+
+        public function updateFranchiseeLogininfo(Request $request){
+            $franchisee = FranchiseeLogin::find($request->franchisee_id);
+
+            $franchisee->user_name = $request->user_name;
+            $franchisee->password = bcrypt($request->password);
+            $franchisee->save();
+
+
+            return redirect('franchisee/LoginManage')->with('message','Franchisee Login info Updated Succesfully');
+
+        }
+
+        public function FranchiseeLoginDelete($id) {
+            $franchisee = FranchiseeLogin::find($id);
+            $franchisee->delete();
+
+
+            return redirect('franchisee/LoginManage')->with('message','Franchisee Login info Deleted Succesfully');
+        }
+
+    */
 public function FranchiseeWork() {
         return view('admin.franchiseeInfo.franchisee-work');
 }
@@ -170,11 +180,11 @@ public function FranchiseeWork() {
 
 
 
-/*
+
     public function FranchiseeLoginform(){
         return view('admin.franchisee.franchiseeOwn-login');
     }
-*/
+
 
 
 
