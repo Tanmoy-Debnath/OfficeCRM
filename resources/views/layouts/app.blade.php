@@ -64,7 +64,7 @@
                                 <a class="nav-link btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
 
-                            <!--
+
                             <br>
                             <li class="nav-item nav-link">
                                 <a class="nav-link btn btn-secondary" href="{{ route('register') }}">{{ __('Register') }}</a>
