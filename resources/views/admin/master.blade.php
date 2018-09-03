@@ -124,9 +124,10 @@
                 <li class="nav-item dropdown d-none d-xl-inline-block">
                     <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                         <span class="profile-text">{{ Auth::user()->name }}</span>
-                        <img class="img-xs rounded-circle" src="{{ asset('/') }}admin/images/faces/face1.jpg" alt="Profile image">
+                        <img class="img-xs rounded-circle" src="{{ asset('/') }}admin/images/faces-clipart/pic-4.png" alt="Profile image">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                        <!--
                         <a class="dropdown-item p-0">
                             <div class="d-flex border-bottom">
                                 <div class="py-3 px-4 d-flex align-items-center justify-content-center">
@@ -140,12 +141,17 @@
                                 </div>
                             </div>
                         </a>
-
-
-
+                        
+                        -->
+                       <!-- 
+                        <a class="dropdown-item " href="{{ route('profile') }}"
+                           ><i class="menu-icon mdi mdi-eye"></i> {{ __('View Profile') }}                           
+                        </a>
+                        -->
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();"><i class="menu-icon mdi mdi-reply"></i>
+
                             {{ __('Logout') }}
                         </a>
 
