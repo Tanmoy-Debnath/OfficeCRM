@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Stuff;
 use Session;
@@ -17,11 +16,11 @@ class ReceptionController extends Controller
 
         if( $staff = Stuff::where('user_name', $request->user_name)->first()){
 
-            //if (password_verify($request->password,$franchisee->password)) {
+
             if( $staff = Stuff::where('password', $request->password)->first()){
-                Session::put('guestId',$staff->id);
-                Session::put('guestName',$staff->user_name);
-                Session::put('guestType',$staff->type);
+                Session::put('receptionistId',$staff->id);
+                Session::put('receptionistName',$staff->user_name);
+                Session::put('receptionistType',$staff->type);
 
                 return redirect('receptionist/home'
 
@@ -38,6 +37,7 @@ class ReceptionController extends Controller
 
         }
 
+
     }
 
     public function RecptionistHomePage() {
@@ -53,4 +53,14 @@ class ReceptionController extends Controller
 
         return redirect('receptionist/home')->with('message','Guest Info add Successfully');
 }
+
+
+public function RecptionistVisitorList() {
+        $guests = Gueest::all();
+        return view('admin.Receptionist.show-visitor',[
+            'guests' => $guests
+        ]);
+}
+
+
 }

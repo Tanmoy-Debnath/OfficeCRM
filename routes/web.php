@@ -26,18 +26,23 @@ Route::get('profile', 'HomeController@profile')->name('profile');
 
 Route::get('stuff/Stuff-form',[
     'uses' => 'StuffController@stuffForm',
-    'as'  => 'stuff-form'
+    'as'  => 'stuff-form',
+    'middleware' => 'AuthMiddleware'
 ]);
 
 
 Route::post('stuff/Stuff-added',[
     'uses' => 'StuffController@stuffAdd',
     'as'  => 'add-stuff'
+
+
 ]);
 
 Route::get('stuff/Stuff-manage',[
     'uses' => 'StuffController@ManageStuff',
-    'as'  => 'manage-stuff'
+    'as'  => 'manage-stuff',
+    'middleware' => 'AuthMiddleware'
+
 ]);
 
 Route::get('/stuff/edit/{id}', [
@@ -302,6 +307,31 @@ Route::get('download/Order-Pdf',[
                                                    // Receptionist Area
 
 
+
+Route::get('receptionist/login-form',[
+    'uses' => 'ReceptionController@RecptionistLoginForm',
+    'as'  => 'receptionistLogin-form'
+
+]);
+
+Route::post('receptionist/receptionist-LogIn',[
+    'uses' => 'ReceptionController@receptionistLogInAdd',
+    'as'  => 'receptionist-logincheck'
+]);
+
+Route::get('receptionist/home',[
+    'uses' => 'ReceptionController@RecptionistHomePage',
+    'as'  => 'receptionistHome-page',
+    'middleware' => 'ReceptionistMiddleware'
+]);
+
+Route::post('receptionist/receptionist-add',[
+    'uses' => 'ReceptionController@addguestReception',
+    'as'  => 'save-guestByReceptionist'
+]);
+
+
+
 Route::get('receptionist/login-form',[
     'uses' => 'ReceptionController@RecptionistLoginForm',
     'as'  => 'receptionistLogin-form'
@@ -322,5 +352,9 @@ Route::post('receptionist/receptionist-add',[
     'as'  => 'save-guestByReceptionist'
 ]);
 
+Route::get('receptionist/visitor-list',[
+    'uses' => 'ReceptionController@RecptionistVisitorList',
+    'as'  => 'show-visitor'
+]);
 
 

@@ -6,6 +6,8 @@
 @section('content')
 
 
+<<<<<<< HEAD
+=======
 <div class="container col-md-12">
         <table class="table table-hover table-primary">
 
@@ -117,6 +119,7 @@
 
 
 
+>>>>>>> c63c7488eede8acf55d972ef3444c8067fbc15d1
 
 
 

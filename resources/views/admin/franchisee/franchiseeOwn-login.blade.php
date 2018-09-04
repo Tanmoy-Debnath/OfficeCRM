@@ -8,7 +8,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>
+
+        Franchisee Login
+
         @yield('titleName')
+
     </title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('/') }}admin/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
@@ -64,7 +68,11 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
+
                         <h3 style="color: green; text-align: center;">{{ Session::get('message') }}</h3>
+
+
+
                         {{ Form::open(['route' => 'franchisee-LogInOwn', 'method'=>'POST']) }}
                             <div class="form-group">
                                 <label style="color: grey;" class="label">Username</label>

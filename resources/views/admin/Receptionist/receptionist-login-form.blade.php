@@ -64,7 +64,11 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
+
                         <h3 style="color: green; text-align: center;">{{ Session::get('message') }}</h3>
+
+
+
                    {{ Form::open([ 'route' => 'receptionist-logincheck', 'method' => 'POST']) }}
                         <div class="form-group">
                             <label style="color: grey;" class="label">Username</label>
