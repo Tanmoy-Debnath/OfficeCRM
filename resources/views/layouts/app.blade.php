@@ -103,8 +103,8 @@
                                     <a href="{{ route('receptionistLogin-form') }}" class="dropdown-item mt-2">
                                         Receptionist
                                     </a>
-                                    <a class="dropdown-item">
-                                        Change Password
+                                    <a href="{{ route('franchisee-addbyStuffLogin') }}" class="dropdown-item">
+                                        Franchisee-Add
                                     </a>
                                     <a class="dropdown-item">
                                         Check Inbox

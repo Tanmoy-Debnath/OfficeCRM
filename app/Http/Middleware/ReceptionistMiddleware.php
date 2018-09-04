@@ -17,7 +17,7 @@ class ReceptionistMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Session::get('receptionistName')::check()){
+        if( $staff = Stuff::where('user_name', $request->user_name)){
             return $next($request);
         } else {
             return redirect('receptionist/login-form');

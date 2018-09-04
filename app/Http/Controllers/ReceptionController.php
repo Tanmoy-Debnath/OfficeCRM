@@ -8,19 +8,20 @@ use App\Gueest;
 
 class ReceptionController extends Controller
 {
+
     public function RecptionistLoginForm() {
         return view('admin.Receptionist.receptionist-login-form');
     }
 
     public function receptionistLogInAdd(Request $request) {
 
-        if( $staff = Stuff::where('user_name', $request->user_name)->first()){
+        if( $staffasf = Stuff::where('user_name', $request->user_name)->first()){
 
 
-            if( $staff = Stuff::where('password', $request->password)->first()){
-                Session::put('receptionistId',$staff->id);
-                Session::put('receptionistName',$staff->user_name);
-                Session::put('receptionistType',$staff->type);
+            if( $staffasf = Stuff::where('password', $request->password)->first()){
+                Session::put('receptionistId',$staffasf->id);
+                Session::put('receptionistName',$staffasf->user_name);
+                Session::put('staffType',$staffasf->type);
 
                 return redirect('receptionist/home'
 
@@ -56,8 +57,10 @@ class ReceptionController extends Controller
 
 
 public function RecptionistVisitorList() {
-        $guests = Gueest::all();
+         $guests = Gueest::all();
+
         return view('admin.Receptionist.show-visitor',[
+
             'guests' => $guests
         ]);
 }

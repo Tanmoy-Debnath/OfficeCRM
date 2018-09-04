@@ -1,4 +1,3 @@
-
 @extends('admin.Receptionist.master')
 
 @section('titleName')
