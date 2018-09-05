@@ -25,13 +25,17 @@ class CreateFranchiseesTable extends Migration
             $table->string('year')->nullable();
             $table->string('address');
             $table->string('phone_number');
-            $table->string('bkash');
-            $table->string('dbbl');
-            $table->string('nid');
+            $table->string('bkash')->nullable();
+            $table->string('dbbl')->nullable();
+            $table->string('nid')->nullable();
             $table->string('sis_id');
             $table->string('no_slot');
             $table->string('no_payment');
-            $table->string('no_renew');
+
+            $table->string('datee')->nullable();
+            $table->string('monthh')->nullable();
+            $table->string('yearr')->nullable();
+
             $table->string('user_name');
             $table->string('password');
 

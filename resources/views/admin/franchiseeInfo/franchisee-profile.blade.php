@@ -109,19 +109,14 @@
             </tr>
 
 
-            <tr>
 
-
-                <td>Payment  :</td>
-                <td>{{ Session::get('franchiseepayment') }}</td>
-            </tr>
 
 
             <tr>
 
 
-                <td>Renew :</td>
-                <td>{{ Session::get('franchiseerenew') }}</td>
+                <td>ID creation Date :</td>
+                <td>{{ Session::get('franchiseeJdate') }}-{{ Session::get('franchiseeJmonth') }}-{{ Session::get('franchiseeJyear') }}</td>
             </tr>
 
 

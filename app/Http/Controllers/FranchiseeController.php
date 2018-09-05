@@ -37,7 +37,9 @@ public function franchiseeAdd(Request $request) {
     $franchisee->sis_id = $request->sis_id;
     $franchisee->no_slot = $request->no_slot;
     $franchisee->no_payment = $request->no_payment;
-    $franchisee->no_renew = $request->no_renew;
+    $franchisee->datee = $request->datee;
+    $franchisee->monthh = $request->monthh;
+    $franchisee->yearr = $request->yearr;
     $franchisee->user_name = $request->user_name;
     //$franchisee->password = bcrypt($request->password);
     $franchisee->password = $request->password;
@@ -77,7 +79,10 @@ public function franchiseeAdd(Request $request) {
                 Session::put('franchiseesisid',$franchisee->sis_id);
                 Session::put('franchiseeslot',$franchisee->no_slot);
                 Session::put('franchiseepayment',$franchisee->no_payment);
-                Session::put('franchiseerenew',$franchisee->no_renew);
+
+            Session::put('franchiseeJdate',$franchisee->datee);
+            Session::put('franchiseeJmonth',$franchisee->monthh);
+            Session::put('franchiseeJyear',$franchisee->yearr);
 
                 return redirect('franchisee/info'
 
@@ -303,7 +308,9 @@ public function editFranchiseeinfo($id){
         $franchisee->sis_id = $request->sis_id;
         $franchisee->no_slot = $request->no_slot;
         $franchisee->no_payment = $request->no_payment;
-        $franchisee->no_renew = $request->no_renew;
+        $franchisee->datee = $request->datee;
+        $franchisee->monthh = $request->monthh;
+        $franchisee->yearr = $request->yearr;
         $franchisee->user_name = $request->user_name;
         //$franchisee->password = bcrypt($request->password);
         $franchisee->password = $request->password;

@@ -14,6 +14,9 @@
                                 <th>ID. No.</th>
 
                                 <th>Full Name</th>
+                                <th>User Name</th>
+                                <th>Password</th>
+                                <th>ID Creation date</th>
                                 <th>Father Name</th>
                                 <th>Sex</th>
                                 <th>DOB</th>
@@ -25,13 +28,12 @@
                                 <th>SIS ID</th>
                                 <th>No. of Slot</th>
                                 <th>No. of Payment</th>
-                                <th>No. of Renew</th>
-                                <th>User Name</th>
-                                <th>Password</th>
 
 
 
-                                <th>Date & Time</th>
+
+
+
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
@@ -42,6 +44,9 @@
                                 <tr>
                                     <td>{{ $i++ }}</td>
                                     <td>{{ $franchisee->title }} {{ $franchisee->f_name }} {{ $franchisee->l_name }}</td>
+                                    <td>{{ $franchisee->user_name }}</td>
+                                    <td>{{ $franchisee->password }}</td>
+                                    <td>{{ $franchisee->datee }} - {{ $franchisee->monthh }} - {{ $franchisee->yearr }}</td>
                                     <td>{{ $franchisee->father_name }}</td>
                                     <td>{{ $franchisee->sex }}</td>
                                     <td>{{ $franchisee->date }} - {{ $franchisee->month }} - {{ $franchisee->year }}</td>
@@ -53,11 +58,10 @@
                                     <td>{{ $franchisee->sis_id }}</td>
                                     <td>{{ $franchisee->no_slot }}</td>
                                     <td>{{ $franchisee->no_payment }}</td>
-                                    <td>{{ $franchisee->no_renew }}</td>
-                                    <td>{{ $franchisee->user_name }}</td>
-                                    <td>{{ $franchisee->password }}</td>
 
-                                    <td>{{ $franchisee->created_at }}</td>
+
+
+
 
                                     <td>
                                         <a href="{{ route('edit-franchisee', ['id'=>$franchisee->id]) }}">
