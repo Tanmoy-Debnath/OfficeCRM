@@ -26,6 +26,13 @@
         <table class="table table-hover table-primary">
 
             <tbody>
+
+            <tr>
+
+                <th scope="col">Franchisee Id :</th>
+                <th scope="col">{{ Session::get('franchiseeId') }}</th>
+
+            </tr>            
             <tr>
 
                 <th scope="col">User Name :</th>

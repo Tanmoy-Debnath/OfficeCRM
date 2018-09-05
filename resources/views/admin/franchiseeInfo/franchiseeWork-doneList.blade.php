@@ -6,120 +6,49 @@
 @section('content')
 
 
-<<<<<<< HEAD
-=======
 <div class="container col-md-12">
-        <table class="table table-hover table-primary">
+        <table class="table table-hover table-primary" id="order-listing" class="table table-striped">
 
+            <thead>
+	            <tr>
+	                <th>Record No :</th>
+	                <th>Policy Date:</th>
+	                <th>Policy No. </th>
+					<th>Medical Card No: </th>
+					<th>First Name:</th>
+					<th>Last Name:</th>
+					<th>City: </th>
+					<th>State:</th>
+					<th>Phone: </th>
+					<th>Martial Status:</th>
+					<th>Generel Practitioner(gp) Code:</th>
+					<th>Hospital/Claim Days:</th>
+					<th>Paid Amount:</th>
+					<th>Net Amount:</th>
+	            </tr>
+        	</thead>
             <tbody>
-            <tr>
-
-                <th scope="col">record :</th>
-                <th scope="col">{{ Session::get('franchiseeName') }}</th>
-
-            </tr>
-            <tr>
-
-                <td>policy  :</td>
-                <td>{{ Session::get('franchiseefirstName') }} {{ Session::get('franchiseeLastName') }}</td>
-
-            </tr>
-            <tr>
-
-
-                <td>f  : </td>
-                <td>{{ Session::get('franchiseeFatherName') }}</td>
-            </tr>
-
-            <tr>
-
-
-                <td>Date of Birth  : </td>
-                <td>{{ Session::get('franchiseeBdate') }}-{{ Session::get('franchiseeBmonth') }}-{{ Session::get('franchiseeByear') }}</td>
-            </tr>
-            <tr>
-
-
-                <td>Sex :</td>
-                <td>{{ Session::get('franchiseesex') }}</td>
-            </tr>
-            <tr>
-
-
-                <td>Address :</td>
-                <td>{{ Session::get('franchiseeAddress') }}</td>
-            </tr>
-
-            <tr>
-
-
-                <td>Phone Number : </td>
-                <td>{{ Session::get('franchiseePhone') }}</td>
-            </tr>
-
-            <tr>
-
-
-                <td>NID Number  :</td>
-                <td>{{ Session::get('franchiseeNid') }}</td>
-            </tr>
-
-            <tr>
-
-
-                <td>SIS ID  : </td>
-                <td>{{ Session::get('franchiseesisid') }}</td>
-            </tr>
-
-
-            <tr>
-
-
-                <td>Slot Number  :</td>
-                <td>{{ Session::get('franchiseeslot') }}</td>
-            </tr>
-
-
-            <tr>
-
-
-                <td>Payment  :</td>
-                <td>{{ Session::get('franchiseepayment') }}</td>
-            </tr>
-
-
-            <tr>
-
-
-                <td>Payment  :</td>
-                <td>{{ Session::get('franchiseepayment') }}</td>
-            </tr>
-
-
-            <tr>
-
-
-                <td>Renew :</td>
-                <td>{{ Session::get('franchiseerenew') }}</td>
-            </tr>
-
-
-
-
-
-
-
+	            <tr>                
+	                <td>{{ Session::get('franchiseeName') }}</td>
+	                <td>{{ Session::get('franchiseefirstName') }} {{ Session::get('franchiseeLastName') }}</td>              
+	                <td>{{ Session::get('franchiseeFatherName') }}</td>              
+	                <td>{{ Session::get('franchiseeBdate') }}-{{ Session::get('franchiseeBmonth') }}-{{ Session::get('franchiseeByear') }}</td>
+	                <td>{{ Session::get('franchiseesex') }}</td>
+	                <td>{{ Session::get('franchiseeAddress') }}</td>
+	                <td>{{ Session::get('franchiseePhone') }}</td>
+	                <td>{{ Session::get('franchiseeNid') }}</td>
+	                <td>{{ Session::get('franchiseesisid') }}</td>               
+	                <td>{{ Session::get('franchiseeslot') }}</td>                
+	                <td>{{ Session::get('franchiseepayment') }}</td>
+	                <td>{{ Session::get('franchiseepayment') }}</td>
+	                <td>{{ Session::get('franchiseerenew') }}</td>
+	                <td>{{ Session::get('franchiseerenew') }}</td>
+	            </tr>
             </tbody>
         </table>
 
     </div>
 
-
-
-
-
-
->>>>>>> c63c7488eede8acf55d972ef3444c8067fbc15d1
 
 
 

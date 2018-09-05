@@ -23,34 +23,34 @@
              {{ Form::open([ 'method' => 'POST', 'route' => 'franchisee-workSave' ]) }}
 
             <div class="form-group">
-                <label  class="l1">Record No.</label>
-                <input type="text" name="record" class="form-control"  placeholder="Enter Record no." >
-                <input type="hidden" value="{{ Session::get('franchiseeName') }}" name="user_name" class="form-control">
+                <label class="l1">Record No.</label>
+                <input tabindex="1" type="text" name="record" class="form-control"  placeholder="Enter Record no." autofocus>
+                <input type="hidden" value="{{ Session::get('franchiseeName') }}" name="user_name" class="form-control" >
 
             </div>
             <div class="form-group">
                 <label  class="l1">Policy No.</label>
-                <input type="text" name="policy" class="form-control"  placeholder="Enter Policy no." >
+                <input tabindex="5" type="text" name="policy" class="form-control"  placeholder="Enter Policy no." >
             </div>
                 <div class="form-group">
                     <label for="email" class="l1">First Name:</label>
-                    <input type="text" name="f_name" class="form-control"  placeholder="Enter First Name" >
+                    <input tabindex="7" type="text" name="f_name" class="form-control"  placeholder="Enter First Name" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">City:</label>
-                    <input type="text" name="city" class="form-control"  placeholder="Enter City" >
+                    <input tabindex="9" type="text" name="city" class="form-control"  placeholder="Enter City" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Phone:</label>
-                    <input type="text" name="phone" class="form-control"  placeholder="Enter Phone no." >
+                    <input tabindex="11" type="text" name="phone" class="form-control"  placeholder="Enter Phone no." >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Generel Practitioner(gp) Code:</label>
-                    <input type="text" name="gp" class="form-control"  placeholder="Enter Generel Practitioner(gp) Code" >
+                    <input tabindex="13" type="text" name="gp" class="form-control"  placeholder="Enter Generel Practitioner(gp) Code" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Paid Amount:</label>
-                    <input type="text" name="paid_amount" class="form-control"  placeholder="Enter paid amount" >
+                    <input tabindex="15" type="text" name="paid_amount" class="form-control"  placeholder="Enter paid amount" >
                 </div>
 
 
@@ -67,7 +67,7 @@
                     <div class="form-control">
                         Day :
 
-                        <select class="control-group" name='date' id='date'>
+                        <select tabindex="2" class="control-group" name='date' id='date'>
                             <option value='1'>1</option>
                             <option value='2'>2</option>
                             <option value='3'>3</option>
@@ -103,7 +103,7 @@
 
 
                         Month :
-                        <select name='month' id='month'>
+                        <select tabindex="3" name='month' id='month'>
                             <option value='1'>1</option>
                             <option value='2'>2</option>
                             <option value='3'>3</option>
@@ -122,7 +122,7 @@
                         Year :
 
 
-                        <select name='year' id='year'>
+                        <select tabindex="4" name='year' id='year'>
 
                             <option value='1980'>1980</option>
                             <option value='1981'>1981</option>
@@ -176,20 +176,20 @@
                 </div>
                 <div class="form-group">
                     <label for="pwd" class="l1">Medical Card No:</label>
-                    <input type="text" name="medical" class="form-control"  placeholder="Enter Medical Card No" >
+                    <input tabindex="6" type="text" name="medical" class="form-control"  placeholder="Enter Medical Card No" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Last Name:</label>
-                    <input type="text" name="l_name" class="form-control"  placeholder="Enter Last Name" >
+                    <input tabindex="8" type="text" name="l_name" class="form-control"  placeholder="Enter Last Name" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">State:</label>
-                    <input type="text" name="state" class="form-control"  placeholder="Enter State" >
+                    <input tabindex="10" type="text" name="state" class="form-control"  placeholder="Enter State" >
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Martial Status:</label>
                     <div>
-                        <select class="form-control" name="marit">
+                        <select tabindex="12" class="form-control" name="marit">
 
                         <option value='Married'>Married</option>
                         <option value='Unmarried'>Unmarried</option>
@@ -199,11 +199,11 @@
                 </div>
                 <div class="form-group">
                     <label for="email" class="l1">Hospital/Claim Days:</label>
-                    <input type="text" name="claims" class="form-control"  placeholder="Enter Hospital/Claim Days" >
+                    <input tabindex="14" type="text" name="claims" class="form-control"  placeholder="Enter Hospital/Claim Days" >
                 </div>
                 <div class="form-group">
                     <label class="l1" for="email">Net Amount:</label>
-                    <input type="text" name="n_amount" class="form-control"  placeholder="Enter Net Amount" >
+                    <input tabindex="16" type="text" name="n_amount" class="form-control"  placeholder="Enter Net Amount" >
                 </div>
 
 
@@ -212,12 +212,12 @@
 
     </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button tabindex="17" type="submit" class="btn btn-primary">Submit</button>
 
         {{ Form::close() }}
 
         <a href="{{ route('franchisee-work') }}">
-            <button class="btn btn-secondary">Clear</button>
+            <button tabindex="18" class="btn btn-secondary">Clear</button>
         </a>
 
 
