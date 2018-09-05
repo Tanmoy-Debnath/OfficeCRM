@@ -47,7 +47,6 @@ public function staffLogInAddcheck(Request $request) {
 public function staffOnlyFranchiseesdd(Request $request) {
 
     $franchisee = new Franchisee();
-
     $franchisee->title = $request->title;
     $franchisee->f_name = $request->f_name;
     $franchisee->l_name = $request->l_name;
@@ -77,5 +76,12 @@ public function staffOnlyFranchiseesdd(Request $request) {
 
 
     return redirect('staff/franchisee-HomePage')->with('message','Franchisee Info Add Succesfully');
+}
+
+public function OnlyFranchiseeShow() {
+    $franchisees = Franchisee::all();
+        return view('admin.OnlyFranchisee.OnlyFranchiseeList',[
+            'franchisees' => $franchisees
+        ]);
 }
 }

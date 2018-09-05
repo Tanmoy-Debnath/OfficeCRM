@@ -40,24 +40,24 @@
                             @php($i=1)
                             @foreach($franchisees as $franchisee)
                                 <tr>
-                                    <th>{{ $i++ }}</th>
-                                    <th>{{ $franchisee->title }} {{ $franchisee->f_name }} {{ $franchisee->l_name }}</th>
-                                    <th>{{ $franchisee->father_name }}</th>
-                                    <th>{{ $franchisee->sex }}</th>
-                                    <th>{{ $franchisee->date }} - {{ $franchisee->month }} - {{ $franchisee->year }}</th>
-                                    <th>{{ $franchisee->address }}</th>
-                                    <th>{{ $franchisee->phone_number }}</th>
-                                    <th>{{ $franchisee->bkash }}</th>
-                                    <th>{{ $franchisee->dbbl }}</th>
-                                    <th>{{ $franchisee->nid }}</th>
-                                    <th>{{ $franchisee->sis_id }}</th>
-                                    <th>{{ $franchisee->no_slot }}</th>
-                                    <th>{{ $franchisee->no_payment }}</th>
-                                    <th>{{ $franchisee->no_renew }}</th>
-                                    <th>{{ $franchisee->user_name }}</th>
-                                    <th>{{ $franchisee->password }}</th>
+                                    <td>{{ $i++ }}</td>
+                                    <td>{{ $franchisee->title }} {{ $franchisee->f_name }} {{ $franchisee->l_name }}</td>
+                                    <td>{{ $franchisee->father_name }}</td>
+                                    <td>{{ $franchisee->sex }}</td>
+                                    <td>{{ $franchisee->date }} - {{ $franchisee->month }} - {{ $franchisee->year }}</td>
+                                    <td>{{ $franchisee->address }}</td>
+                                    <td>{{ $franchisee->phone_number }}</td>
+                                    <td>{{ $franchisee->bkash }}</td>
+                                    <td>{{ $franchisee->dbbl }}</td>
+                                    <td>{{ $franchisee->nid }}</td>
+                                    <td>{{ $franchisee->sis_id }}</td>
+                                    <td>{{ $franchisee->no_slot }}</td>
+                                    <td>{{ $franchisee->no_payment }}</td>
+                                    <td>{{ $franchisee->no_renew }}</td>
+                                    <td>{{ $franchisee->user_name }}</td>
+                                    <td>{{ $franchisee->password }}</td>
 
-                                    <th>{{ $franchisee->created_at }}</th>
+                                    <td>{{ $franchisee->created_at }}</td>
 
                                     <td>
                                         <a href="{{ route('edit-franchisee', ['id'=>$franchisee->id]) }}">

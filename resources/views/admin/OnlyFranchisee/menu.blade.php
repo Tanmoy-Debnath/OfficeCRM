@@ -18,11 +18,12 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('franchisee-addbyStuff') }}">
                 <i class="menu-icon mdi mdi-television"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
+        <!--
         <li class="nav-item">
             <a class="nav-link" href="{{ route('franchisee-listShow') }}">
                 <i class="menu-icon mdi mdi-television"></i>
@@ -31,7 +32,7 @@
         </li>
 
 
-
+-->
 
 
 
