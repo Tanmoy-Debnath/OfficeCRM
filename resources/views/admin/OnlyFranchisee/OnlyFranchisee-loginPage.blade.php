@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>
-        @yield('titleName')
+       Staff who add Franchisee
     </title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('/') }}admin/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
@@ -67,15 +67,16 @@
 
                         <h3 style="color: green; text-align: center;">{{ Session::get('message') }}</h3>
 
-                        <h4 style="font-style: italic; text-align: center;">Receptionist Login Area</h4>
+                        <h4 style="font-style: italic; text-align: center;">Staff (Franchaisee-Add only) Login Area</h4>
 
 
 
-                   {{ Form::open([ 'route' => 'receptionist-logincheck', 'method' => 'POST']) }}
+                        {{ Form::open([ 'route' => 'staffFranchisee-logincheck', 'method' => 'POST']) }}
                         <div class="form-group">
                             <label style="color: grey;" class="label">Username</label>
 
                             <input type="text" name="user_name" class="form-control" placeholder="Username">
+                            <input type="hidden" name="receptionist" value="receptionist" class="form-control" placeholder="Username">
 
 
                         </div>
@@ -103,7 +104,7 @@
 
                         </div>
 
-               {{ Form::close() }}
+                        {{ Form::close() }}
 
 
                     </div>

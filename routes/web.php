@@ -306,13 +306,12 @@ Route::get('download/Order-Pdf',[
 
                                                    // Receptionist Area
 
-
-
 Route::get('receptionist/login-form',[
     'uses' => 'ReceptionController@RecptionistLoginForm',
     'as'  => 'receptionistLogin-form'
 
 ]);
+
 
 Route::post('receptionist/receptionist-LogIn',[
     'uses' => 'ReceptionController@receptionistLogInAdd',
@@ -358,3 +357,32 @@ Route::get('receptionist/visitor-list',[
 ]);
 
 
+                                                    // Staff who added only Franchisee
+
+Route::get('staff/franchisee-HomePage',[
+    'uses' => 'OnlyFranchisee@OnlyFranchiseeadd',
+    'as'  => 'franchisee-addbyStuff'
+]);
+
+
+Route::get('staff/franchisee-LoginArea',[
+    'uses' => 'OnlyFranchisee@OnlyFranchiseeaddLogin',
+    'as'  => 'franchisee-addbyStuffLogin'
+]);
+
+Route::post('staff/staffWhoaddedfranchisee-LogIn',[
+    'uses' => 'OnlyFranchisee@staffLogInAddcheck',
+    'as'  => 'staffFranchisee-logincheck'
+]);
+
+
+Route::post('staff/staffWhoaddedfranchisee-save',[
+    'uses' => 'OnlyFranchisee@staffOnlyFranchiseesdd',
+    'as'  => 'add-franchiseeByStaff'
+]);
+
+
+Route::get('staff/franchisee-ShowList',[
+    'uses' => 'OnlyFranchisee@OnlyFranchiseeShow',
+    'as'  => 'franchisee-listShow'
+]);

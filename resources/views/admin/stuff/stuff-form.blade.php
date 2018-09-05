@@ -41,6 +41,7 @@
                     <div class="col-md-9">
 
                         <label><input type="radio" name="type" value="receptionist"/>Receptionist</label>
+                        <label><input type="radio" name="type" value="franchisee"/>Franchisee</label>
                         <label><input type="radio" name="type" value="order"/>Order</label>
                         <label><input type="radio" name="type" value="qc"/>QC</label>
                     </div>

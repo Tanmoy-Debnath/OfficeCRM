@@ -1,5 +1,5 @@
 
-@if(Session::get('receptionistName'))
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -188,7 +188,7 @@
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
-    @include('admin.Receptionist.menu')
+    @include('admin.OnlyFranchisee.menu')
 
     <!-- partial -->
 
@@ -344,7 +344,3 @@
 </body>
 
 </html>
-@else
-    <h2 style="text-align: center; margin-top: 20%;">You have to login first</h2>
-
-    @endif

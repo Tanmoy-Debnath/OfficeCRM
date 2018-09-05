@@ -1,3 +1,6 @@
+
+
+
 @extends('admin.Receptionist.master')
 @section('titleName')
    Visitors List
@@ -55,6 +58,12 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
 
 
 
